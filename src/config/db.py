@@ -1,4 +1,9 @@
 from pymongo import MongoClient
-MONGO_URI = "mongodb+srv://roman:roman_notes@cluster0.sjws2.mongodb.net/notes"
+from dotenv import load_dotenv
+import os
 
-conn = MongoClient(MONGO_URI)
+load_dotenv()
+DB_URI = os.getenv("MONGO_URI")
+
+
+conn = MongoClient(DB_URI)
